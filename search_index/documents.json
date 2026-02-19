@@ -1,0 +1,122 @@
+[
+  {
+    "content": "SCHOLARSHIP: National Means-cum-Merit Scholarship (NMMS)\nProvider: Central Government\nEligibility: Class 8 students from government schools, family income below 1.5 lakh/year\nAmount: 12000 per year\nApplicable Grades: 8\nStream: all\nLocation: all\nDescription: Scholarship to arrest dropout at Class 8 level and encourage meritorious students to continue education up to Class 12.\nApply at: https://scholarships.gov.in",
+    "type": "scholarship",
+    "name": "National Means-cum-Merit Scholarship (NMMS)"
+  },
+  {
+    "content": "SCHOLARSHIP: Post Matric Scholarship for SC Students\nProvider: Central Government\nEligibility: SC students studying in Class 11 and above, family income below 2.5 lakh/year\nAmount: Varies by course and institution\nApplicable Grades: 11, 12\nStream: all\nLocation: all\nDescription: Financial assistance for SC students pursuing post-matric education.\nApply at: https://scholarships.gov.in",
+    "type": "scholarship",
+    "name": "Post Matric Scholarship for SC Students"
+  },
+  {
+    "content": "SCHOLARSHIP: Tamil Nadu Chief Minister's Scholarship\nProvider: Tamil Nadu Government\nEligibility: Students scoring above 90% in Class 12 from Tamil Nadu state board\nAmount: 5000 one-time\nApplicable Grades: 12\nStream: all\nLocation: Tamil Nadu\nDescription: Rewarding academic excellence for Tamil Nadu board students.\nApply at: https://tn.gov.in/scholarship",
+    "type": "scholarship",
+    "name": "Tamil Nadu Chief Minister's Scholarship"
+  },
+  {
+    "content": "SCHOLARSHIP: Pragati Scholarship for Girls (AICTE)\nProvider: AICTE\nEligibility: Girl students admitted to AICTE approved technical diploma/degree programs\nAmount: 50000 per year\nApplicable Grades: 12\nStream: science, technical\nLocation: all\nDescription: Empowering girl students pursuing technical education.\nApply at: https://www.aicte-india.org",
+    "type": "scholarship",
+    "name": "Pragati Scholarship for Girls (AICTE)"
+  },
+  {
+    "content": "SCHOLARSHIP: Inspire Scholarship (DST)\nProvider: Department of Science & Technology\nEligibility: Top 1% in Class 12 board exams, pursuing BSc/integrated MSc in natural sciences\nAmount: 80000 per year\nApplicable Grades: 12\nStream: science\nLocation: all\nDescription: For students who choose natural sciences at undergraduate level.\nApply at: https://online-inspire.gov.in",
+    "type": "scholarship",
+    "name": "Inspire Scholarship (DST)"
+  },
+  {
+    "content": "SCHOLARSHIP: Begum Hazrat Mahal National Scholarship\nProvider: Maulana Azad Education Foundation\nEligibility: Minority girl students (Muslim, Christian, Sikh, Buddhist, Jain, Parsi) in Class 9-12\nAmount: 10000 per year\nApplicable Grades: 9, 10, 11, 12\nStream: all\nLocation: all\nDescription: Supporting minority girl students to continue their education.\nApply at: https://scholarships.gov.in",
+    "type": "scholarship",
+    "name": "Begum Hazrat Mahal National Scholarship"
+  },
+  {
+    "content": "SCHOLARSHIP: NSP Central Sector Scholarship\nProvider: Central Government\nEligibility: Students above 80th percentile in Class 12, pursuing undergraduate courses, income below 4.5 lakh/year\nAmount: 12000 per year for first 3 years, 20000 in 4th/5th year\nApplicable Grades: 12\nStream: all\nLocation: all\nDescription: Merit-based scholarship for regular students pursuing higher education.\nApply at: https://scholarships.gov.in",
+    "type": "scholarship",
+    "name": "NSP Central Sector Scholarship"
+  },
+  {
+    "content": "VOCATIONAL PATHWAY: ITI Electrician Trade\nProvider: Industrial Training Institute (ITI)\nDuration: 2 years\nEligibility: Class 8 pass or Class 10 pass\nAfter Grade: 8, 10\nJob Roles: Electrician, Wireman, Electrical Contractor\nAverage Salary: 15000-30000 per month\nFurther Education Options: NTTF Diploma, Apprenticeship, Polytechnic lateral entry\nDescription: Learn electrical wiring, installation, and maintenance. High demand across India in construction and manufacturing sectors.",
+    "type": "vocational",
+    "name": "ITI Electrician Trade"
+  },
+  {
+    "content": "VOCATIONAL PATHWAY: ITI Computer Operator & Programming Assistant (COPA)\nProvider: Industrial Training Institute (ITI)\nDuration: 1 year\nEligibility: Class 10 pass\nAfter Grade: 10\nJob Roles: Data Entry Operator, Computer Operator, Office Assistant\nAverage Salary: 12000-25000 per month\nFurther Education Options: BCA, B.Sc Computer Science, Polytechnic Diploma\nDescription: Covers basic programming, MS Office, internet use. Ideal for those interested in office or IT-related work.",
+    "type": "vocational",
+    "name": "ITI Computer Operator & Programming Assistant (COPA)"
+  },
+  {
+    "content": "VOCATIONAL PATHWAY: Polytechnic Diploma in Mechanical Engineering\nProvider: State Polytechnic Colleges\nDuration: 3 years\nEligibility: Class 10 pass with Math and Science\nAfter Grade: 10\nJob Roles: Junior Engineer, Maintenance Technician, Production Supervisor\nAverage Salary: 18000-40000 per month\nFurther Education Options: B.E./B.Tech lateral entry (2nd year), AMIE\nDescription: Hands-on engineering program covering design, manufacturing, and maintenance. Gateway to lateral entry into engineering degrees.",
+    "type": "vocational",
+    "name": "Polytechnic Diploma in Mechanical Engineering"
+  },
+  {
+    "content": "VOCATIONAL PATHWAY: NSDC Skill Development - Healthcare Assistant\nProvider: National Skill Development Corporation (NSDC)\nDuration: 6 months\nEligibility: Class 8 pass\nAfter Grade: 8, 9, 10\nJob Roles: Hospital Attendant, Home Healthcare Worker, Nursing Assistant\nAverage Salary: 12000-20000 per month\nFurther Education Options: GNM Nursing, ANM Nursing, B.Sc Nursing\nDescription: NSDC certified program for healthcare sector entry. Good demand in hospitals and elderly care.",
+    "type": "vocational",
+    "name": "NSDC Skill Development - Healthcare Assistant"
+  },
+  {
+    "content": "VOCATIONAL PATHWAY: Fashion Design & Tailoring (NSDC)\nProvider: National Skill Development Corporation (NSDC)\nDuration: 3-6 months\nEligibility: Class 8 pass\nAfter Grade: 8, 9, 10, 11, 12\nJob Roles: Tailor, Fashion Designer Assistant, Self-employed boutique owner\nAverage Salary: 10000-35000 per month (higher if self-employed)\nFurther Education Options: NIFT, Pearl Academy, State Design Institutes\nDescription: Skill-based program ideal for creative students, especially in semi-urban areas. Entrepreneurship potential is high.",
+    "type": "vocational",
+    "name": "Fashion Design & Tailoring (NSDC)"
+  },
+  {
+    "content": "VOCATIONAL PATHWAY: Agriculture Technology (Class 11-12 Vocational)\nProvider: State Boards - Vocational Stream\nDuration: 2 years (Class 11-12)\nEligibility: Class 10 pass\nAfter Grade: 10\nJob Roles: Agricultural Assistant, Agri Entrepreneur, Krishi Vigyan Kendra Worker\nAverage Salary: Self-employment varies, 15000-40000 per month salaried\nFurther Education Options: B.Sc Agriculture, Horticulture, Agri MBA\nDescription: For students from farming families or rural areas. Combines modern agriculture techniques with academic qualification.",
+    "type": "vocational",
+    "name": "Agriculture Technology (Class 11-12 Vocational)"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: PM YASASVI Scheme\nFull Name: PM Young Achievers Scholarship Award Scheme for Vibrant India\nProvider: Ministry of Social Justice & Empowerment\nEligibility: OBC, EBC, DNT students in Class 9 and 11, family income below 2.5 lakh/year\nBenefit: 75000 per year for Class 9-10, 125000 per year for Class 11-12\nApplicable Grades: 9, 11\nDescription: Scholarship for OBC and marginalized communities to support school education.\nApply at: https://yet.nta.ac.in",
+    "type": "scheme",
+    "name": "PM YASASVI Scheme"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: Skill India Mission - PMKVY\nFull Name: Pradhan Mantri Kaushal Vikas Yojana\nProvider: Ministry of Skill Development and Entrepreneurship\nEligibility: Indian youth, Class 8 dropout to Class 12 pass\nBenefit: Free skill training + certification + job placement support\nApplicable Grades: 8, 9, 10, 11, 12\nDescription: Free short-term skill training in 300+ job roles. Stipend provided during training. Recognized certification accepted by industry.\nApply at: https://pmkvyofficial.org",
+    "type": "scheme",
+    "name": "Skill India Mission - PMKVY"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: National Apprenticeship Promotion Scheme (NAPS)\nFull Name: National Apprenticeship Promotion Scheme (NAPS)\nProvider: Ministry of Skill Development\nEligibility: Class 5 pass and above, age 14-21 years\nBenefit: Stipend support during apprenticeship, industry experience\nApplicable Grades: 8, 9, 10, 11, 12\nDescription: Connects students with industry for on-the-job training. Government shares 25% of stipend cost with employer.\nApply at: https://apprenticeshipindia.gov.in",
+    "type": "scheme",
+    "name": "National Apprenticeship Promotion Scheme (NAPS)"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: PM e-VIDYA\nFull Name: PM e-VIDYA\nProvider: Ministry of Education\nEligibility: All students Class 1-12\nBenefit: Free digital education via DTH TV, radio, and online platforms\nApplicable Grades: 8, 9, 10, 11, 12\nDescription: Multi-mode access to quality digital education. Includes DIKSHA platform, SWAYAM PRABHA channels, and FM radio programs.\nApply at: https://diksha.gov.in",
+    "type": "scheme",
+    "name": "PM e-VIDYA"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: Mukhyamantri Kalaignar Magalir Urimai Thittam (Tamil Nadu)\nFull Name: Mukhyamantri Kalaignar Magalir Urimai Thittam (Tamil Nadu)\nProvider: Tamil Nadu Government\nEligibility: Girl students in Tamil Nadu government schools\nBenefit: Free bicycle, books, uniform, and financial support\nApplicable Grades: 9, 10, 11, 12\nDescription: Tamil Nadu government's flagship scheme for girl students to reduce dropout rates and improve attendance.\nApply at: https://tn.gov.in",
+    "type": "scheme",
+    "name": "Mukhyamantri Kalaignar Magalir Urimai Thittam (Tamil Nadu)"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: Startup India Seed Fund\nFull Name: Startup India Seed Fund\nProvider: DPIIT, Government of India\nEligibility: Young entrepreneurs with innovative ideas, age 18+\nBenefit: Up to 20 lakh seed funding for startups\nApplicable Grades: 12\nDescription: For entrepreneurially inclined students who want to start a business after Class 12. Seed funding and mentorship available.\nApply at: https://startupindia.gov.in",
+    "type": "scheme",
+    "name": "Startup India Seed Fund"
+  },
+  {
+    "content": "ACADEMIC STREAM: Science Stream (PCM - Physics, Chemistry, Math)\nAfter Grade: 10\nSubjects: Physics, Chemistry, Mathematics\nCareer Paths: Engineering (B.E./B.Tech), Architecture, Merchant Navy, Data Science, Defence (NDA)\nEntrance Exams: JEE Main, JEE Advanced, BITSAT, KCET, TNEA\nJob Roles: Engineer, Architect, Pilot, Data Analyst, Army Officer\nBest For: Students who enjoy problem-solving, mathematics, and logical thinking\nDifficulty Level: High",
+    "type": "stream",
+    "name": "Science Stream (PCM - Physics, Chemistry, Math)"
+  },
+  {
+    "content": "ACADEMIC STREAM: Science Stream (PCB - Physics, Chemistry, Biology)\nAfter Grade: 10\nSubjects: Physics, Chemistry, Biology\nCareer Paths: MBBS, BDS, B.Sc Nursing, Pharmacy, Biotechnology, Agriculture\nEntrance Exams: NEET, AIIMS, JIPMER, State CETs\nJob Roles: Doctor, Dentist, Nurse, Pharmacist, Biotechnologist\nBest For: Students who enjoy life sciences and want to work in healthcare\nDifficulty Level: High",
+    "type": "stream",
+    "name": "Science Stream (PCB - Physics, Chemistry, Biology)"
+  },
+  {
+    "content": "ACADEMIC STREAM: Commerce Stream\nAfter Grade: 10\nSubjects: Accountancy, Business Studies, Economics, Mathematics (optional)\nCareer Paths: CA (Chartered Accountancy), B.Com, BBA, Economics (Hons), Law\nEntrance Exams: CA Foundation, CLAT (for Law), IPM (IIM Indore), DU JAT\nJob Roles: Chartered Accountant, Business Analyst, Banker, Economist, Lawyer\nBest For: Students interested in business, finance, and economics\nDifficulty Level: Medium",
+    "type": "stream",
+    "name": "Commerce Stream"
+  },
+  {
+    "content": "ACADEMIC STREAM: Arts / Humanities Stream\nAfter Grade: 10\nSubjects: History, Political Science, Geography, Psychology, Sociology, Fine Arts\nCareer Paths: UPSC Civil Services, Journalism, Social Work, Psychology, Law, Design\nEntrance Exams: CLAT, CUET, UPSC (after graduation), NID, NIFT\nJob Roles: IAS/IPS Officer, Journalist, Psychologist, Lawyer, Social Worker, Designer\nBest For: Students with interest in society, culture, writing, and public service\nDifficulty Level: Medium",
+    "type": "stream",
+    "name": "Arts / Humanities Stream"
+  },
+  {
+    "content": "ACADEMIC STREAM: Vocational Stream (Class 11-12)\nAfter Grade: 10\nSubjects: Trade-specific subjects + General Academics\nCareer Paths: Direct employment, Entrepreneurship, Diploma courses, Further skill training\nEntrance Exams: State Polytechnic entrance, ITI entrance\nJob Roles: Trade-specific roles, Self-employment, Technician\nBest For: Students who prefer practical, hands-on learning and want to enter the workforce sooner\nDifficulty Level: Low-Medium",
+    "type": "stream",
+    "name": "Vocational Stream (Class 11-12)"
+  }
+]

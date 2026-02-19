@@ -1,0 +1,86 @@
+[
+  {
+    "id": "sch_001",
+    "name": "National Means-cum-Merit Scholarship (NMMS)",
+    "provider": "Central Government",
+    "eligibility": "Class 8 students from government schools, family income below 1.5 lakh/year",
+    "amount": "12000 per year",
+    "grades": ["8"],
+    "stream": ["all"],
+    "location": "all",
+    "apply_url": "https://scholarships.gov.in",
+    "description": "Scholarship to arrest dropout at Class 8 level and encourage meritorious students to continue education up to Class 12."
+  },
+  {
+    "id": "sch_002",
+    "name": "Post Matric Scholarship for SC Students",
+    "provider": "Central Government",
+    "eligibility": "SC students studying in Class 11 and above, family income below 2.5 lakh/year",
+    "amount": "Varies by course and institution",
+    "grades": ["11", "12"],
+    "stream": ["all"],
+    "location": "all",
+    "apply_url": "https://scholarships.gov.in",
+    "description": "Financial assistance for SC students pursuing post-matric education."
+  },
+  {
+    "id": "sch_003",
+    "name": "Tamil Nadu Chief Minister's Scholarship",
+    "provider": "Tamil Nadu Government",
+    "eligibility": "Students scoring above 90% in Class 12 from Tamil Nadu state board",
+    "amount": "5000 one-time",
+    "grades": ["12"],
+    "stream": ["all"],
+    "location": "Tamil Nadu",
+    "apply_url": "https://tn.gov.in/scholarship",
+    "description": "Rewarding academic excellence for Tamil Nadu board students."
+  },
+  {
+    "id": "sch_004",
+    "name": "Pragati Scholarship for Girls (AICTE)",
+    "provider": "AICTE",
+    "eligibility": "Girl students admitted to AICTE approved technical diploma/degree programs",
+    "amount": "50000 per year",
+    "grades": ["12"],
+    "stream": ["science", "technical"],
+    "location": "all",
+    "apply_url": "https://www.aicte-india.org",
+    "description": "Empowering girl students pursuing technical education."
+  },
+  {
+    "id": "sch_005",
+    "name": "Inspire Scholarship (DST)",
+    "provider": "Department of Science & Technology",
+    "eligibility": "Top 1% in Class 12 board exams, pursuing BSc/integrated MSc in natural sciences",
+    "amount": "80000 per year",
+    "grades": ["12"],
+    "stream": ["science"],
+    "location": "all",
+    "apply_url": "https://online-inspire.gov.in",
+    "description": "For students who choose natural sciences at undergraduate level."
+  },
+  {
+    "id": "sch_006",
+    "name": "Begum Hazrat Mahal National Scholarship",
+    "provider": "Maulana Azad Education Foundation",
+    "eligibility": "Minority girl students (Muslim, Christian, Sikh, Buddhist, Jain, Parsi) in Class 9-12",
+    "amount": "10000 per year",
+    "grades": ["9", "10", "11", "12"],
+    "stream": ["all"],
+    "location": "all",
+    "apply_url": "https://scholarships.gov.in",
+    "description": "Supporting minority girl students to continue their education."
+  },
+  {
+    "id": "sch_007",
+    "name": "NSP Central Sector Scholarship",
+    "provider": "Central Government",
+    "eligibility": "Students above 80th percentile in Class 12, pursuing undergraduate courses, income below 4.5 lakh/year",
+    "amount": "12000 per year for first 3 years, 20000 in 4th/5th year",
+    "grades": ["12"],
+    "stream": ["all"],
+    "location": "all",
+    "apply_url": "https://scholarships.gov.in",
+    "description": "Merit-based scholarship for regular students pursuing higher education."
+  }
+]

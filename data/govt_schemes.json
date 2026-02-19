@@ -1,0 +1,64 @@
+[
+  {
+    "id": "gov_001",
+    "name": "PM YASASVI Scheme",
+    "full_name": "PM Young Achievers Scholarship Award Scheme for Vibrant India",
+    "provider": "Ministry of Social Justice & Empowerment",
+    "eligibility": "OBC, EBC, DNT students in Class 9 and 11, family income below 2.5 lakh/year",
+    "benefit": "75000 per year for Class 9-10, 125000 per year for Class 11-12",
+    "grades": ["9", "11"],
+    "description": "Scholarship for OBC and marginalized communities to support school education.",
+    "apply_url": "https://yet.nta.ac.in"
+  },
+  {
+    "id": "gov_002",
+    "name": "Skill India Mission - PMKVY",
+    "full_name": "Pradhan Mantri Kaushal Vikas Yojana",
+    "provider": "Ministry of Skill Development and Entrepreneurship",
+    "eligibility": "Indian youth, Class 8 dropout to Class 12 pass",
+    "benefit": "Free skill training + certification + job placement support",
+    "grades": ["8", "9", "10", "11", "12"],
+    "description": "Free short-term skill training in 300+ job roles. Stipend provided during training. Recognized certification accepted by industry.",
+    "apply_url": "https://pmkvyofficial.org"
+  },
+  {
+    "id": "gov_003",
+    "name": "National Apprenticeship Promotion Scheme (NAPS)",
+    "provider": "Ministry of Skill Development",
+    "eligibility": "Class 5 pass and above, age 14-21 years",
+    "benefit": "Stipend support during apprenticeship, industry experience",
+    "grades": ["8", "9", "10", "11", "12"],
+    "description": "Connects students with industry for on-the-job training. Government shares 25% of stipend cost with employer.",
+    "apply_url": "https://apprenticeshipindia.gov.in"
+  },
+  {
+    "id": "gov_004",
+    "name": "PM e-VIDYA",
+    "provider": "Ministry of Education",
+    "eligibility": "All students Class 1-12",
+    "benefit": "Free digital education via DTH TV, radio, and online platforms",
+    "grades": ["8", "9", "10", "11", "12"],
+    "description": "Multi-mode access to quality digital education. Includes DIKSHA platform, SWAYAM PRABHA channels, and FM radio programs.",
+    "apply_url": "https://diksha.gov.in"
+  },
+  {
+    "id": "gov_005",
+    "name": "Mukhyamantri Kalaignar Magalir Urimai Thittam (Tamil Nadu)",
+    "provider": "Tamil Nadu Government",
+    "eligibility": "Girl students in Tamil Nadu government schools",
+    "benefit": "Free bicycle, books, uniform, and financial support",
+    "grades": ["9", "10", "11", "12"],
+    "description": "Tamil Nadu government's flagship scheme for girl students to reduce dropout rates and improve attendance.",
+    "apply_url": "https://tn.gov.in"
+  },
+  {
+    "id": "gov_006",
+    "name": "Startup India Seed Fund",
+    "provider": "DPIIT, Government of India",
+    "eligibility": "Young entrepreneurs with innovative ideas, age 18+",
+    "benefit": "Up to 20 lakh seed funding for startups",
+    "grades": ["12"],
+    "description": "For entrepreneurially inclined students who want to start a business after Class 12. Seed funding and mentorship available.",
+    "apply_url": "https://startupindia.gov.in"
+  }
+]

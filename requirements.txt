@@ -1,0 +1,24 @@
+# LLM
+groq>=0.9.0
+
+# Search (lightweight, no conflicts)
+scikit-learn>=1.3.0
+numpy>=1.24.0
+
+# Language & Translation
+langdetect>=1.0.9
+deep-translator>=1.11.4
+
+# Emotion Detection (lightweight)
+transformers>=4.40.0
+
+# Backend
+fastapi>=0.112.0
+uvicorn>=0.30.6
+pydantic>=2.8.2
+python-dotenv>=1.0.1
+httpx>=0.27.0
+
+# Frontend
+streamlit>=1.38.0
+requests>=2.32.3

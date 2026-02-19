@@ -1,0 +1,57 @@
+[
+  {
+    "id": "acad_001",
+    "name": "Science Stream (PCM - Physics, Chemistry, Math)",
+    "after_grade": "10",
+    "subjects": ["Physics", "Chemistry", "Mathematics"],
+    "career_paths": ["Engineering (B.E./B.Tech)", "Architecture", "Merchant Navy", "Data Science", "Defence (NDA)"],
+    "entrance_exams": ["JEE Main", "JEE Advanced", "BITSAT", "KCET", "TNEA"],
+    "job_roles": ["Engineer", "Architect", "Pilot", "Data Analyst", "Army Officer"],
+    "best_for": "Students who enjoy problem-solving, mathematics, and logical thinking",
+    "difficulty": "High"
+  },
+  {
+    "id": "acad_002",
+    "name": "Science Stream (PCB - Physics, Chemistry, Biology)",
+    "after_grade": "10",
+    "subjects": ["Physics", "Chemistry", "Biology"],
+    "career_paths": ["MBBS", "BDS", "B.Sc Nursing", "Pharmacy", "Biotechnology", "Agriculture"],
+    "entrance_exams": ["NEET", "AIIMS", "JIPMER", "State CETs"],
+    "job_roles": ["Doctor", "Dentist", "Nurse", "Pharmacist", "Biotechnologist"],
+    "best_for": "Students who enjoy life sciences and want to work in healthcare",
+    "difficulty": "High"
+  },
+  {
+    "id": "acad_003",
+    "name": "Commerce Stream",
+    "after_grade": "10",
+    "subjects": ["Accountancy", "Business Studies", "Economics", "Mathematics (optional)"],
+    "career_paths": ["CA (Chartered Accountancy)", "B.Com", "BBA", "Economics (Hons)", "Law"],
+    "entrance_exams": ["CA Foundation", "CLAT (for Law)", "IPM (IIM Indore)", "DU JAT"],
+    "job_roles": ["Chartered Accountant", "Business Analyst", "Banker", "Economist", "Lawyer"],
+    "best_for": "Students interested in business, finance, and economics",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "acad_004",
+    "name": "Arts / Humanities Stream",
+    "after_grade": "10",
+    "subjects": ["History", "Political Science", "Geography", "Psychology", "Sociology", "Fine Arts"],
+    "career_paths": ["UPSC Civil Services", "Journalism", "Social Work", "Psychology", "Law", "Design"],
+    "entrance_exams": ["CLAT", "CUET", "UPSC (after graduation)", "NID", "NIFT"],
+    "job_roles": ["IAS/IPS Officer", "Journalist", "Psychologist", "Lawyer", "Social Worker", "Designer"],
+    "best_for": "Students with interest in society, culture, writing, and public service",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "acad_005",
+    "name": "Vocational Stream (Class 11-12)",
+    "after_grade": "10",
+    "subjects": ["Trade-specific subjects + General Academics"],
+    "career_paths": ["Direct employment", "Entrepreneurship", "Diploma courses", "Further skill training"],
+    "entrance_exams": ["State Polytechnic entrance", "ITI entrance"],
+    "job_roles": ["Trade-specific roles", "Self-employment", "Technician"],
+    "best_for": "Students who prefer practical, hands-on learning and want to enter the workforce sooner",
+    "difficulty": "Low-Medium"
+  }
+]
