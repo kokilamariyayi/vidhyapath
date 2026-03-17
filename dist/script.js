@@ -14,8 +14,8 @@ const API_URL = window.location.hostname === 'localhost' || window.location.host
     ? 'http://localhost:8000' 
     : 'https://vidhyapath.onrender.com';
 
-console.log('🚀 VidyaPath v1.1.5 - Render Backend Active');
-window.__VIDYAPATH_VERSION__ = '1.1.5';
+console.log('🚀 VidyaPath v1.1.6 - Profile Accuracy Fix');
+window.__VIDYAPATH_VERSION__ = '1.1.6';
 
 // Local translation dictionary for UI labels (Offline support)
 const UI_TRANSLATIONS = {
@@ -256,6 +256,8 @@ function updateProfile(profile) {
 
     if (html) {
         profileContainer.innerHTML = html;
+    } else {
+        profileContainer.innerHTML = `<p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 2rem;" data-i18n="Chat with me to build your profile!">Chat with me to build your profile!</p>`;
     }
 }
 
