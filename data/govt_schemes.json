@@ -60,5 +60,75 @@
     "grades": ["12"],
     "description": "For entrepreneurially inclined students who want to start a business after Class 12. Seed funding and mentorship available.",
     "apply_url": "https://startupindia.gov.in"
+  },
+  {
+    "id": "gov_007",
+    "name": "PM Mudra Yojana",
+    "provider": "Ministry of Finance",
+    "eligibility": "Non-corporate, non-farm small/micro enterprises",
+    "benefit": "Loans up to 10 lakh for income generation",
+    "grades": ["college", "professional", "entrepreneur"],
+    "description": "Financial support for starting or expanding a small business. No collateral required for loans up to 10 lakh.",
+    "apply_url": "https://www.mudra.org.in"
+  },
+  {
+    "id": "gov_008",
+    "name": "e-Shram Portal",
+    "provider": "Ministry of Labour & Employment",
+    "eligibility": "Unorganized sector workers aged 16-59",
+    "benefit": "Accidental insurance cover of 2 lakh under PMSBY",
+    "grades": ["job_seeker", "professional", "parent"],
+    "description": "National database of unorganized workers to provide social security and welfare benefits.",
+    "apply_url": "https://eshram.gov.in"
+  },
+  {
+    "id": "gov_009",
+    "name": "NCS Portal - National Career Service",
+    "provider": "Ministry of Labour & Employment",
+    "eligibility": "Job seekers across India",
+    "benefit": "Access to government and private job listings, career counseling",
+    "grades": ["10", "12", "college", "job_seeker", "professional"],
+    "description": "Platform connecting job seekers with employers, providing career counseling, skill training, and job fairs.",
+    "apply_url": "https://www.ncs.gov.in"
+  },
+  {
+    "id": "gov_010",
+    "name": "PM Kaushal Kendra (PMKK)",
+    "provider": "Ministry of Skill Development",
+    "eligibility": "Youth seeking skill development",
+    "benefit": "State-of-the-art Model Training Centres in every district",
+    "grades": ["9", "10", "11", "12", "college", "job_seeker"],
+    "description": "Standardized skill training centers providing industry-relevant training in rural and urban areas.",
+    "apply_url": "https://nsdcindia.org/pmkk"
+  },
+  {
+    "id": "gov_011",
+    "name": "Stand Up India",
+    "provider": "Department of Financial Services",
+    "eligibility": "SC/ST and Women entrepreneurs above 18 years",
+    "benefit": "Bank loans between 10 lakh and 1 crore",
+    "grades": ["college", "entrepreneur", "professional"],
+    "description": "Facilitates bank loans for setting up greenfield enterprises in manufacturing, services or trading sectors.",
+    "apply_url": "https://www.standupmitra.in"
+  },
+  {
+    "id": "gov_012",
+    "name": "DDU-GKY",
+    "provider": "Ministry of Rural Development",
+    "eligibility": "Rural youth between 15-35 years (up to 45 for SC/ST/Women/PWD)",
+    "benefit": "Free skill training and placement support",
+    "grades": ["8", "9", "10", "11", "12", "college", "job_seeker"],
+    "description": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana focuses on skilling rural youth and providing jobs with regular monthly wages.",
+    "apply_url": "http://ddugky.gov.in"
+  },
+  {
+    "id": "gov_013",
+    "name": "PMEGP",
+    "provider": "Ministry of MSME",
+    "eligibility": "Unemployed youth, minimum Grade 8 pass for projects above 5-10 lakh",
+    "benefit": "Margin money subsidy up to 35% for new micro-enterprises",
+    "grades": ["10", "12", "college", "job_seeker", "entrepreneur"],
+    "description": "Prime Minister's Employment Generation Programme supports unemployed youth in setting up new micro-enterprises. Includes bank loans and government subsidies.",
+    "apply_url": "https://www.kviconline.gov.in/pmegpeportal/pmegphome/index.jsp"
   }
 ]

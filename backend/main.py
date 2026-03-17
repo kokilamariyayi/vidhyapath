@@ -40,6 +40,12 @@ sessions: dict = {}
 class ChatRequest(BaseModel):
     session_id: Optional[str] = None
     message: str
+    target_lang: Optional[str] = None
+
+
+class TranslationRequest(BaseModel):
+    text: str
+    target_lang: str
 
 
 class ChatResponse(BaseModel):
@@ -65,6 +71,19 @@ def get_or_create_session(session_id: Optional[str]):
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "service": "VidyaPath API", "version": "1.0.0"}
+
+
+@app.post("/translate")
+async def translate_text(request: TranslationRequest):
+    try:
+        if request.target_lang == "en":
+            return {"translated_text": request.text}
+        
+        translated = translate_from_english(request.text, request.target_lang)
+        return {"translated_text": translated}
+    except Exception as e:
+        logger.error(f"Translation error: {e}")
+        return {"translated_text": request.text, "error": str(e)}
 
 
 @app.post("/chat", response_model=ChatResponse)
@@ -95,8 +114,9 @@ async def chat(request: ChatRequest):
             response_style=response_style
         )
 
-        # Translate response back
-        final_response = translate_from_english(english_response, detected_lang)
+        # Translate response back (Priority: user-selected target_lang > detected_lang)
+        response_lang = request.target_lang or detected_lang
+        final_response = translate_from_english(english_response, response_lang)
 
         # Update history
         session["chat_history"].append({
@@ -142,3 +162,10 @@ async def clear_session(session_id: str):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("backend.main:app", host="0.0.0.0", port=8000, reload=True)
+
+# For Firebase Functions / Google Cloud Functions
+try:
+    from mangum import Mangum
+    handler = Mangum(app)
+except ImportError:
+    pass

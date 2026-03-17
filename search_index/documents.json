@@ -95,6 +95,41 @@
     "name": "Startup India Seed Fund"
   },
   {
+    "content": "GOVERNMENT SCHEME: PM Mudra Yojana\nFull Name: PM Mudra Yojana\nProvider: Ministry of Finance\nEligibility: Non-corporate, non-farm small/micro enterprises\nBenefit: Loans up to 10 lakh for income generation\nApplicable Grades: college, professional, entrepreneur\nDescription: Financial support for starting or expanding a small business. No collateral required for loans up to 10 lakh.\nApply at: https://www.mudra.org.in",
+    "type": "scheme",
+    "name": "PM Mudra Yojana"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: e-Shram Portal\nFull Name: e-Shram Portal\nProvider: Ministry of Labour & Employment\nEligibility: Unorganized sector workers aged 16-59\nBenefit: Accidental insurance cover of 2 lakh under PMSBY\nApplicable Grades: job_seeker, professional, parent\nDescription: National database of unorganized workers to provide social security and welfare benefits.\nApply at: https://eshram.gov.in",
+    "type": "scheme",
+    "name": "e-Shram Portal"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: NCS Portal - National Career Service\nFull Name: NCS Portal - National Career Service\nProvider: Ministry of Labour & Employment\nEligibility: Job seekers across India\nBenefit: Access to government and private job listings, career counseling\nApplicable Grades: 10, 12, college, job_seeker, professional\nDescription: Platform connecting job seekers with employers, providing career counseling, skill training, and job fairs.\nApply at: https://www.ncs.gov.in",
+    "type": "scheme",
+    "name": "NCS Portal - National Career Service"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: PM Kaushal Kendra (PMKK)\nFull Name: PM Kaushal Kendra (PMKK)\nProvider: Ministry of Skill Development\nEligibility: Youth seeking skill development\nBenefit: State-of-the-art Model Training Centres in every district\nApplicable Grades: 9, 10, 11, 12, college, job_seeker\nDescription: Standardized skill training centers providing industry-relevant training in rural and urban areas.\nApply at: https://nsdcindia.org/pmkk",
+    "type": "scheme",
+    "name": "PM Kaushal Kendra (PMKK)"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: Stand Up India\nFull Name: Stand Up India\nProvider: Department of Financial Services\nEligibility: SC/ST and Women entrepreneurs above 18 years\nBenefit: Bank loans between 10 lakh and 1 crore\nApplicable Grades: college, entrepreneur, professional\nDescription: Facilitates bank loans for setting up greenfield enterprises in manufacturing, services or trading sectors.\nApply at: https://www.standupmitra.in",
+    "type": "scheme",
+    "name": "Stand Up India"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: DDU-GKY\nFull Name: DDU-GKY\nProvider: Ministry of Rural Development\nEligibility: Rural youth between 15-35 years (up to 45 for SC/ST/Women/PWD)\nBenefit: Free skill training and placement support\nApplicable Grades: 8, 9, 10, 11, 12, college, job_seeker\nDescription: Deen Dayal Upadhyaya Grameen Kaushalya Yojana focuses on skilling rural youth and providing jobs with regular monthly wages.\nApply at: http://ddugky.gov.in",
+    "type": "scheme",
+    "name": "DDU-GKY"
+  },
+  {
+    "content": "GOVERNMENT SCHEME: PMEGP\nFull Name: PMEGP\nProvider: Ministry of MSME\nEligibility: Unemployed youth, minimum Grade 8 pass for projects above 5-10 lakh\nBenefit: Margin money subsidy up to 35% for new micro-enterprises\nApplicable Grades: 10, 12, college, job_seeker, entrepreneur\nDescription: Prime Minister's Employment Generation Programme supports unemployed youth in setting up new micro-enterprises. Includes bank loans and government subsidies.\nApply at: https://www.kviconline.gov.in/pmegpeportal/pmegphome/index.jsp",
+    "type": "scheme",
+    "name": "PMEGP"
+  },
+  {
     "content": "ACADEMIC STREAM: Science Stream (PCM - Physics, Chemistry, Math)\nAfter Grade: 10\nSubjects: Physics, Chemistry, Mathematics\nCareer Paths: Engineering (B.E./B.Tech), Architecture, Merchant Navy, Data Science, Defence (NDA)\nEntrance Exams: JEE Main, JEE Advanced, BITSAT, KCET, TNEA\nJob Roles: Engineer, Architect, Pilot, Data Analyst, Army Officer\nBest For: Students who enjoy problem-solving, mathematics, and logical thinking\nDifficulty Level: High",
     "type": "stream",
     "name": "Science Stream (PCM - Physics, Chemistry, Math)"

@@ -5,13 +5,21 @@ Tracks: grade, stream preference, location, interests, constraints.
 """
 
 import re
+import json
+import os
+import logging
 from typing import Optional
+from groq import Groq
+
+logger = logging.getLogger(__name__)
 
 
 class StudentProfile:
     def __init__(self):
+        self.user_type: Optional[str] = None  # school_student, college_student, parent, job_seeker, professional, entrepreneur
         self.grade: Optional[str] = None
         self.stream: Optional[str] = None
+        self.degree: Optional[str] = None
         self.location: Optional[str] = None
         self.interests: list = []
         self.constraints: list = []
@@ -23,8 +31,10 @@ class StudentProfile:
 
     def to_dict(self) -> dict:
         return {
+            "user_type": self.user_type,
             "grade": self.grade,
             "stream": self.stream,
+            "degree": self.degree,
             "location": self.location,
             "interests": self.interests,
             "constraints": self.constraints,
@@ -37,8 +47,12 @@ class StudentProfile:
     def to_context_string(self) -> str:
         """Convert profile to a context string for LLM prompts."""
         parts = []
+        if self.user_type:
+            parts.append(f"User Type: {self.user_type}")
         if self.grade:
             parts.append(f"Grade: {self.grade}")
+        if self.degree:
+            parts.append(f"Degree/Qualification: {self.degree}")
         if self.stream:
             parts.append(f"Stream Interest: {self.stream}")
         if self.location:
@@ -60,101 +74,79 @@ class StudentProfile:
 
     def is_complete_enough(self) -> bool:
         """Check if we have enough info to give good recommendations."""
-        return self.grade is not None and (self.stream is not None or len(self.interests) > 0)
+        return (self.grade is not None or self.user_type is not None) and (self.stream is not None or len(self.interests) > 0 or self.degree is not None)
 
 
 def extract_profile_from_text(text: str, profile: StudentProfile) -> StudentProfile:
     """
-    Extract student profile information from conversation text.
-    Updates and returns the profile object.
+    Extract student profile information using AI (Groq).
     """
-    text_lower = text.lower()
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        logger.warning("GROQ_API_KEY not found. Skipping AI profile extraction.")
+        return profile
 
-    # Extract grade
-    grade_patterns = [
-        r'\b(class|grade|std|standard)\s*(\d{1,2})\b',
-        r'\b(\d{1,2})(th|st|nd|rd)\s*(class|grade|std|standard)\b',
-        r'\bin\s*(class|grade)\s*(\d{1,2})\b'
-    ]
-    for pattern in grade_patterns:
-        match = re.search(pattern, text_lower)
-        if match:
-            # Get the numeric group
-            groups = match.groups()
-            for g in groups:
-                if g and g.isdigit() and 8 <= int(g) <= 12:
-                    profile.grade = g
-                    break
+    try:
+        client = Groq(api_key=api_key)
+        
+        # System prompt for extraction
+        system_prompt = f"""
+        Extract student profile details from the following user message. 
+        Only update fields that are explicitly mentioned or strongly implied.
+        
+        Current Profile: {json.dumps(profile.to_dict())}
+        
+        Fields to extract:
+        - user_type: school_student, college_student, parent, job_seeker, professional, entrepreneur
+        - grade: e.g., "10", "12" (only if numeric and between 8-12)
+        - stream: science, commerce, arts, vocational, agriculture
+        - degree: e.g., "B.Tech", "B.Com", "MBBS"
+        - location: Indian city or state
+        - gender: male, female
+        - category: SC, ST, OBC, General
+        - family_income: e.g., "low", "high", or specific amount if mentioned
+        - interests: list of strings (e.g., ["coding", "medicine"])
+        - constraints: list of strings (e.g., ["financial"])
 
-    # Extract stream preferences
-    stream_keywords = {
-        "science": ["science", "pcm", "pcb", "physics", "chemistry", "biology", "math", "maths"],
-        "commerce": ["commerce", "accounts", "accountancy", "business", "economics", "ca"],
-        "arts": ["arts", "humanities", "history", "geography", "political science", "psychology"],
-        "vocational": ["vocational", "iti", "polytechnic", "diploma", "skill", "trade"],
-        "agriculture": ["agriculture", "farming", "agri", "horticulture"]
-    }
-    for stream, keywords in stream_keywords.items():
-        if any(kw in text_lower for kw in keywords):
-            profile.stream = stream
-            break
+        IMPORTANT: If the user is asking ABOUT a gender (e.g., "schemes for women"), do NOT set their gender to female unless they say "I am a girl" or "As a woman".
+        
+        Return ONLY a valid JSON object with the keys above. Do not include any explanations.
+        """
 
-    # Extract location
-    indian_states = [
-        "tamil nadu", "tamilnadu", "chennai", "coimbatore", "madurai",
-        "andhra pradesh", "telangana", "hyderabad",
-        "karnataka", "bangalore", "bengaluru",
-        "kerala", "rajasthan", "maharashtra", "mumbai", "pune",
-        "uttar pradesh", "delhi", "west bengal", "kolkata",
-        "bihar", "gujarat", "ahmedabad", "madhya pradesh",
-        "odisha", "assam", "punjab", "haryana"
-    ]
-    for loc in indian_states:
-        if loc in text_lower:
-            profile.location = loc.title()
-            break
+        response = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": text}
+            ],
+            temperature=0,
+            response_format={"type": "json_object"}
+        )
 
-    # Extract interests
-    interest_keywords = {
-        "coding": ["coding", "programming", "software", "computer", "app", "web"],
-        "medicine": ["doctor", "medical", "mbbs", "nurse", "nursing", "hospital", "healthcare"],
-        "engineering": ["engineer", "engineering", "mechanical", "electrical", "civil", "it"],
-        "art_design": ["design", "art", "drawing", "creative", "fashion"],
-        "music": ["music", "singing", "dance", "performing"],
-        "sports": ["sports", "cricket", "football", "athlete"],
-        "business": ["business", "entrepreneur", "startup", "shop", "sell"],
-        "teaching": ["teaching", "teacher", "education", "school"],
-        "defence": ["army", "navy", "airforce", "defence", "police", "nda"]
-    }
-    for interest, keywords in interest_keywords.items():
-        if any(kw in text_lower for kw in keywords) and interest not in profile.interests:
-            profile.interests.append(interest)
+        extracted_data = json.loads(response.choices[0].message.content)
+        
+        # Update profile with extracted data
+        if "user_type" in extracted_data: profile.user_type = extracted_data["user_type"]
+        if "grade" in extracted_data: profile.grade = str(extracted_data["grade"])
+        if "stream" in extracted_data: profile.stream = extracted_data["stream"]
+        if "degree" in extracted_data: profile.degree = extracted_data["degree"]
+        if "location" in extracted_data: profile.location = extracted_data["location"]
+        if "gender" in extracted_data: profile.gender = extracted_data["gender"]
+        if "category" in extracted_data: profile.category = extracted_data["category"]
+        if "family_income" in extracted_data: profile.family_income = extracted_data["family_income"]
+        
+        if "interests" in extracted_data:
+            for item in extracted_data["interests"]:
+                if item not in profile.interests:
+                    profile.interests.append(item)
+        
+        if "constraints" in extracted_data:
+            for item in extracted_data["constraints"]:
+                if item not in profile.constraints:
+                    profile.constraints.append(item)
 
-    # Extract gender
-    if any(w in text_lower for w in ["i am a girl", "i'm a girl", "female", "she", "daughter"]):
-        profile.gender = "female"
-    elif any(w in text_lower for w in ["i am a boy", "i'm a boy", "male", "he", "son"]):
-        profile.gender = "male"
-
-    # Extract category
-    if "sc " in text_lower or "scheduled caste" in text_lower:
-        profile.category = "SC"
-    elif "st " in text_lower or "scheduled tribe" in text_lower:
-        profile.category = "ST"
-    elif "obc" in text_lower:
-        profile.category = "OBC"
-
-    # Extract financial constraints
-    income_keywords = ["low income", "poor", "below poverty", "financial problem",
-                       "can't afford", "cannot afford", "no money", "financial constraint"]
-    if any(kw in text_lower for kw in income_keywords):
-        if "financial constraint" not in profile.constraints:
-            profile.constraints.append("financial constraint")
-
-    # Extract other constraints
-    if any(w in text_lower for w in ["rural", "village", "remote area"]):
-        if "rural location" not in profile.constraints:
-            profile.constraints.append("rural location")
+    except Exception as e:
+        logger.error(f"AI Profile extraction failed: {e}")
 
     profile.conversation_turns += 1
     return profile

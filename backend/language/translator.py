@@ -13,7 +13,11 @@ logger = logging.getLogger(__name__)
 SUPPORTED_LANGUAGES = {
     "en": "English",
     "ta": "Tamil",
-    "hi": "Hindi"
+    "hi": "Hindi",
+    "te": "Telugu",
+    "kn": "Kannada",
+    "ml": "Malayalam",
+    "mr": "Marathi"
 }
 
 
