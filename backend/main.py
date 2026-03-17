@@ -116,6 +116,8 @@ async def chat(request: ChatRequest):
 
         # Translate response back (Priority: user-selected target_lang > detected_lang)
         response_lang = request.target_lang or detected_lang
+        logger.info(f"Session {session_id[:8]} | Response Lang: {response_lang} (Requested: {request.target_lang}, Detected: {detected_lang})")
+        
         final_response = translate_from_english(english_response, response_lang)
 
         # Update history
