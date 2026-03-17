@@ -92,9 +92,15 @@ def extract_profile_from_text(text: str, profile: StudentProfile) -> StudentProf
         # System prompt for extraction
         system_prompt = f"""
         Extract student profile details from the following user message. 
-        Only update fields that are explicitly mentioned or strongly implied.
         
-        Current Profile: {json.dumps(profile.to_dict())}
+        CRITICAL RULES:
+        1. ONLY update a field if information is EXPLICITLY stated or STRONGLY implied.
+        2. If a field is NOT mentioned in the current message, do NOT include it in your JSON response.
+        3. Do NOT guess or provide default values (like "male" or "General") if the info is missing.
+        4. If the user is asking ABOUT a group (e.g., "schemes for ST students"), do NOT assume the user belongs to that group unless they say "I am ST" or "for me (ST)".
+        5. Return an EMPTY JSON object {{}} if no new profile information is found.
+
+        Current Profile (for reference only, do not change based on this): {json.dumps(profile.to_dict())}
         
         Fields to extract:
         - user_type: school_student, college_student, parent, job_seeker, professional, entrepreneur
@@ -108,9 +114,7 @@ def extract_profile_from_text(text: str, profile: StudentProfile) -> StudentProf
         - interests: list of strings (e.g., ["coding", "medicine"])
         - constraints: list of strings (e.g., ["financial"])
 
-        IMPORTANT: If the user is asking ABOUT a gender (e.g., "schemes for women"), do NOT set their gender to female unless they say "I am a girl" or "As a woman".
-        
-        Return ONLY a valid JSON object with the keys above. Do not include any explanations.
+        Return ONLY a valid JSON object. No conversation.
         """
 
         response = client.chat.completions.create(
