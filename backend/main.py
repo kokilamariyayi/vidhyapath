@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 app = FastAPI(
     title="VidyaPath API",
     description="AI-powered multilingual career guidance for Indian students",
-    version="1.0.0"
+    version="1.1.7"
 )
 
 app.add_middleware(
