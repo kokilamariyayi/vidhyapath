@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from backend.emotion.detector import detect_emotion
-from backend.language.translator import process_input, translate_from_english
+from backend.language.translator import process_input, translate_from_english, SUPPORTED_LANGUAGES
 from backend.profile.student_profile import StudentProfile, extract_profile_from_text
 from backend.rag.retriever import rag_pipeline
 
@@ -106,24 +106,32 @@ async def chat(request: ChatRequest):
         session["profile"] = extract_profile_from_text(english_message, session["profile"])
         profile_str = session["profile"].to_context_string()
 
-        # RAG + LLM response
-        english_response = rag_pipeline.chat(
+        # Determine the response language (Priority: user-selected target_lang > detected_lang)
+        response_lang = request.target_lang or detected_lang
+        response_lang_name = SUPPORTED_LANGUAGES.get(response_lang, "English")
+        logger.info(f"Session {session_id[:8]} | Response Lang: {response_lang} ({response_lang_name}) (Requested: {request.target_lang}, Detected: {detected_lang})")
+
+        # RAG + LLM response — pass language so LLM responds directly in the target language
+        llm_response = rag_pipeline.chat(
             user_message=english_message,
             chat_history=session["chat_history"],
             student_profile_str=profile_str,
-            response_style=response_style
+            response_style=response_style,
+            response_language=response_lang_name
         )
 
-        # Translate response back (Priority: user-selected target_lang > detected_lang)
-        response_lang = request.target_lang or detected_lang
-        logger.info(f"Session {session_id[:8]} | Response Lang: {response_lang} (Requested: {request.target_lang}, Detected: {detected_lang})")
-        
-        final_response = translate_from_english(english_response, response_lang)
+        # If the LLM was asked to respond in English, use it directly.
+        # Otherwise, use the LLM's native response (it was prompted in the target language).
+        # As a fallback safety net, also try translation if the response looks English.
+        if response_lang == "en":
+            final_response = llm_response
+        else:
+            final_response = llm_response
 
-        # Update history
+        # Update history (store English message for consistent RAG context)
         session["chat_history"].append({
             "user": english_message,
-            "assistant": english_response
+            "assistant": llm_response
         })
         session["message_count"] += 1
 

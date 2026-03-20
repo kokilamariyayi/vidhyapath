@@ -37,7 +37,8 @@ class VidyaPathRAG:
         user_message: str,
         chat_history: list,
         student_profile_str: str,
-        response_style: str = "friendly_informative"
+        response_style: str = "friendly_informative",
+        response_language: str = "English"
     ) -> str:
         self.initialize()
 
@@ -46,7 +47,8 @@ class VidyaPathRAG:
         system_template = get_prompt_template(response_style)
         system_prompt = system_template.format(
             student_profile=student_profile_str,
-            retrieved_context=retrieved_context
+            retrieved_context=retrieved_context,
+            response_language=response_language
         )
 
         messages = [{"role": "system", "content": system_prompt}]
