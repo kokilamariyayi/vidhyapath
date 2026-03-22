@@ -68,19 +68,25 @@ def translate_from_english(text: str, target_lang: str) -> str:
 
 
 def _split_text(text: str, max_length: int) -> list:
-    """Split text into chunks for translation."""
-    sentences = text.split(". ")
+    """Split text into chunks for translation safely."""
     chunks = []
-    current = ""
-    for sentence in sentences:
-        if len(current) + len(sentence) < max_length:
-            current += sentence + ". "
-        else:
-            if current:
-                chunks.append(current.strip())
-            current = sentence + ". "
-    if current:
-        chunks.append(current.strip())
+    while len(text) > 0:
+        if len(text) <= max_length:
+            chunks.append(text)
+            break
+        
+        # Try to find a good breaking point
+        break_point = text.rfind(". ", 0, max_length)
+        if break_point == -1:
+            break_point = text.rfind("\n", 0, max_length)
+        if break_point == -1:
+            break_point = text.rfind(" ", 0, max_length)
+        if break_point == -1:
+            break_point = max_length
+            
+        chunks.append(text[:break_point].strip())
+        text = text[break_point:].strip()
+        
     return chunks
 
 
