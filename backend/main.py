@@ -70,7 +70,7 @@ def get_or_create_session(session_id: Optional[str]):
 
 @app.get("/health")
 def health_check():
-    return {"status": "healthy", "service": "VidyaPath API", "version": "1.1.7"}
+    return {"status": "healthy", "service": "VidyaPath API", "version": "1.1.8"}
 
 
 @app.post("/translate")
