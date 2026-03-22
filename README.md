@@ -33,11 +33,11 @@ FastAPI Backend (/chat endpoint)
        ↓
   ┌─────────────────────┐
   │  Language Detector  │ ← langdetect (auto-detects Tamil/Hindi/English)
-  │  + Translator       │ ← deep-translator (Google Translate, free)
+  │  + Auto-Translator  │ ← deep-translator (Fallback if LLM misses language)
   └──────────┬──────────┘
              ↓
   ┌─────────────────────┐
-  │  Emotion Detector   │ ← HuggingFace zero-shot + keyword rules
+  │  Emotion Detector   │ ← Keyword-based rules (Lightweight, No ML lag)
   │                     │ ← Routes to empathetic/direct/gentle prompts
   └──────────┬──────────┘
              ↓
@@ -47,16 +47,16 @@ FastAPI Backend (/chat endpoint)
   └──────────┬──────────┘
              ↓
   ┌─────────────────────┐
-  │  RAG Pipeline       │ ← ChromaDB + HuggingFace MiniLM embeddings
+  │  RAG Pipeline       │ ← TF-IDF search index (No ChromaDB needed)
   │                     │ ← Retrieves: scholarships, ITI, streams, schemes
   └──────────┬──────────┘
              ↓
   ┌─────────────────────┐
-  │  Groq LLM           │ ← Llama 3.3 70B (FREE, fast)
-  │  (Llama 3.3 70B)    │ ← Emotion-aware prompt templates
+  │  Groq LLM           │ ← Llama 3.3 70B (FREE, ultra-fast)
+  │  (Llama 3.3 70B)    │ ← Emotion-aware & language-strict prompts
   └─────────────────────┘
        ↓
-  Translate response back → User's language
+  Final check → Translate back to User's language (if needed)
 ```
 
 ---
@@ -66,20 +66,22 @@ FastAPI Backend (/chat endpoint)
 ```
 vidyapath/
 ├── backend/
-│   ├── main.py                    # FastAPI app with /chat, /profile endpoints
+│   ├── main.py                    # FastAPI app (v1.1.8)
 │   ├── rag/
-│   │   ├── ingest.py              # Embed all data into ChromaDB
-│   │   └── retriever.py           # LangChain RAG + Groq LLM
+│   │   ├── ingest.py              # TF-IDF Index generator
+│   │   └── retriever.py           # RAG + Groq LLM logic
 │   ├── emotion/
-│   │   └── detector.py            # Emotion classification (hesitant/confident/etc.)
+│   │   └── detector.py            # Lightweight keyword emotion classification
 │   ├── language/
-│   │   └── translator.py          # Language detect + translate pipeline
+│   │   └── translator.py          # robust language detect + translate
 │   ├── profile/
 │   │   └── student_profile.py     # Profile builder from conversation
 │   └── prompts/
-│       └── templates.py           # Emotion-aware prompt templates
-├── frontend/
-│   └── app.py                     # Streamlit chat UI
+│       └── templates.py           # Strict multilingual prompt templates
+├── dist/
+│   ├── index.html                 # Frontend (Firebase Hosting v1.1.7)
+│   ├── script.js                  # Chat logic with "Thinking..." indicator
+│   └── style.css                  # Modern UI with pulsing animations
 ├── data/
 │   ├── scholarships.json          # 7 real central + state scholarships
 │   ├── vocational_pathways.json   # 6 ITI/NSDC/Polytechnic pathways
