@@ -126,7 +126,13 @@ async def chat(request: ChatRequest):
         if response_lang == "en":
             final_response = llm_response
         else:
-            final_response = llm_response
+            from backend.language.translator import detect_language
+            llm_lang = detect_language(llm_response)
+            if llm_lang == "en":
+                logger.info(f"LLM replied in English instead of {response_lang_name}. Applying fallback translation.")
+                final_response = translate_from_english(llm_response, response_lang)
+            else:
+                final_response = llm_response
 
         # Update history (store English message for consistent RAG context)
         session["chat_history"].append({
