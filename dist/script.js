@@ -14,8 +14,8 @@ const API_URL = window.location.hostname === 'localhost' || window.location.host
     ? 'http://localhost:8000' 
     : 'https://vidhyapath.onrender.com';
 
-console.log('🚀 VidyaPath v1.1.6 - Profile Accuracy Fix');
-window.__VIDYAPATH_VERSION__ = '1.1.6';
+console.log('🚀 VidyaPath v1.1.7 - Multilingual Fix + Thinking Indicator');
+window.__VIDYAPATH_VERSION__ = '1.1.7';
 
 // Local translation dictionary for UI labels (Offline support)
 const UI_TRANSLATIONS = {
