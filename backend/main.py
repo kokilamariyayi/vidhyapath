@@ -70,12 +70,13 @@ def get_or_create_session(session_id: Optional[str]):
 
 @app.get("/health")
 def health_check():
-    return {"status": "healthy", "service": "VidyaPath API", "version": "1.0.0"}
+    return {"status": "healthy", "service": "VidyaPath API", "version": "1.1.7"}
 
 
 @app.post("/translate")
 async def translate_text(request: TranslationRequest):
     try:
+        logger.info(f"Translation Request: {request.text[:50]}... to {request.target_lang}")
         if request.target_lang == "en":
             return {"translated_text": request.text}
         
@@ -90,12 +91,14 @@ async def translate_text(request: TranslationRequest):
 async def chat(request: ChatRequest):
     try:
         session_id, session = get_or_create_session(request.session_id)
+        logger.info(f"--- START CHAT REQUEST --- Session: {session_id[:8]}")
 
         # Language detection & translation
         lang_result = process_input(request.message)
         english_message = lang_result["english_text"]
         detected_lang = lang_result["detected_language"]
-
+        
+        # ... (middle part unchanged, but let's just replace the whole block carefully)
         logger.info(f"Session {session_id[:8]} | Lang: {detected_lang} | Msg: {english_message[:50]}")
 
         # Emotion detection
@@ -112,6 +115,7 @@ async def chat(request: ChatRequest):
         logger.info(f"Session {session_id[:8]} | Response Lang: {response_lang} ({response_lang_name}) (Requested: {request.target_lang}, Detected: {detected_lang})")
 
         # RAG + LLM response — pass language so LLM responds directly in the target language
+        logger.info(f"Session {session_id[:8]} | Calling RAG Pipeline...")
         llm_response = rag_pipeline.chat(
             user_message=english_message,
             chat_history=session["chat_history"],
@@ -119,6 +123,7 @@ async def chat(request: ChatRequest):
             response_style=response_style,
             response_language=response_lang_name
         )
+        logger.info(f"Session {session_id[:8]} | LLM Response Received ({len(llm_response)} chars)")
 
         # If the LLM was asked to respond in English, use it directly.
         # Otherwise, use the LLM's native response (it was prompted in the target language).
@@ -141,6 +146,7 @@ async def chat(request: ChatRequest):
         })
         session["message_count"] += 1
 
+        logger.info(f"--- END CHAT REQUEST --- Session: {session_id[:8]}")
         return ChatResponse(
             session_id=session_id,
             response=final_response,

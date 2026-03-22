@@ -170,7 +170,17 @@ async function sendMessage(text) {
     addMessageToUI('user', text);
     chatInput.value = '';
 
+    // Add "Thinking..." indicator
+    const thinkingMsgId = 'thinking-' + Date.now();
+    const thinkingDiv = document.createElement('div');
+    thinkingDiv.className = 'message bot thinking';
+    thinkingDiv.id = thinkingMsgId;
+    thinkingDiv.innerHTML = '<em>Thinking...</em>';
+    chatMessages.appendChild(thinkingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
     try {
+        console.log(`📡 Sending request to ${API_URL}/chat...`);
         const response = await fetch(`${API_URL}/chat`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -181,10 +191,19 @@ async function sendMessage(text) {
             })
         });
 
+        // Remove "Thinking..." indicator
+        const thinkingEl = document.getElementById(thinkingMsgId);
+        if (thinkingEl) thinkingEl.remove();
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Server responded with ${response.status}: ${errorText}`);
+        }
+
         const data = await response.json();
         
         if (data.error) {
-            addMessageToUI('bot', `Error: ${data.error}`);
+            addMessageToUI('bot', `❌ Error: ${data.error}`);
             return;
         }
 
@@ -192,8 +211,12 @@ async function sendMessage(text) {
         updateUI(data);
 
     } catch (error) {
+        // Remove "Thinking..." indicator on error too
+        const thinkingEl = document.getElementById(thinkingMsgId);
+        if (thinkingEl) thinkingEl.remove();
+
         console.error('Fetch error:', error);
-        addMessageToUI('bot', '❌ Cannot connect to backend. Please ensure the server is running.');
+        addMessageToUI('bot', `❌ Connection Error: ${error.message}. Please check if the server is awake.`);
     }
 }
 
